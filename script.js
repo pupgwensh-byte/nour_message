@@ -13,7 +13,7 @@ const noorDetails = {
   specialMoment: "",
   specialSentence: "",
   personalNickname: "",
-  whatsappLink: ""           // مثال: https://wa.me/201xxxxxxxxx
+  whatsappLink: "https://wa.me/201282266003"
 };
 
 const confessions = [
