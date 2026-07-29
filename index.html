@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0710" />
+  <meta name="description" content="رسالة خاصة إلى نور" />
+  <title>إلى نور | من محمود</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <noscript>
+    <div class="noscript">الموقع محتاج JavaScript علشان التجربة تشتغل كاملة.</div>
+  </noscript>
+
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="loader__mark">N</div>
+    <p>بنرتب الكلام اللي كل مرة بنقف قدامك ومنعرفش نقوله</p>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="#hero" class="brand" aria-label="العودة للبداية">
+      <span class="brand__mark">N</span>
+      <span>إلى نور</span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#beginning">البداية</a>
+      <a href="#first-look">أول مرة شوفتك</a>
+      <a href="#why-noor">ليه إنتي؟</a>
+      <a href="#message">الكلام الواضح</a>
+      <a href="#decision">القرار قرارك</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="musicToggle" aria-label="تشغيل أو إيقاف الموسيقى" title="الموسيقى">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+      </button>
+      <button class="icon-btn" id="shareBtn" aria-label="مشاركة الموقع" title="مشاركة">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.7 6.8-4.2M8.6 13.3l6.8 4.2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__orb hero__orb--one"></div>
+      <div class="hero__orb hero__orb--two"></div>
+      <div class="hero__content reveal is-visible">
+        <span class="eyebrow">المكان ده معمول علشانك إنتي وبس</span>
+        <div class="hero__letter">N</div>
+        <h1>نــور</h1>
+        <p class="hero__lead">في كلام كتير كل مرة باجي أقولهولك بتوتر ومبعرفش أرتبه<br>فحبيت أقولهولك المرة دي بطريقة تليق بيكي</p>
+        <div class="hero__actions">
+          <a href="#beginning" class="btn btn--primary">ادخلي شوفي محمود عايز يقولك إيه</a>
+          <button class="btn btn--ghost" id="openMusicChoice">اختاري الموسيقى الأول</button>
+        </div>
+        <p class="hero__note">مش وعد ولا ضغط ولا قرار مستعجل<br>دي بس محاولة صادقة تعرفي بيها اللي جوايا</p>
+      </div>
+      <a href="#beginning" class="scroll-cue" aria-label="انزلي للقسم التالي"><span></span></a>
+    </section>
+
+    <section class="section" id="beginning">
+      <div class="section__head reveal">
+        <span class="section-number">01</span>
+        <span class="eyebrow">قبل أي كلام</span>
+        <h2>أنا عايز أكون واضح معاكي من البداية</h2>
+      </div>
+      <div class="letter-card reveal">
+        <p>بصي يا نور</p>
+        <p>أنا عارف إننا لسه في أول التعارف وعارف إنك لسه مش مقتنعة تديني فرصة وممكن تكوني أصلًا مش فاهمة أنا مهتم بيكي بالشكل ده ليه</p>
+        <p>علشان كده عملت المكان ده مش علشان أضغط عليكي ولا علشان أحطك قدام أمر واقع لكن علشان أقولك بهدوء كل الكلام اللي كل مرة باجي أقولهولك بتوتر ومبعرفش أرتبه</p>
+        <p>أنا مش طالب منك وعد ومش داخل أقولك إننا لازم نرتبط أنا بس طالب فرصة بسيطة تعرفيني فيها زي ما أنا وبعدها إنتي صاحبة القرار من أوله لآخره</p>
+        <blockquote>أنا بس مش عايزك ترفضي شخص لسه معرفتيهوش فعلًا</blockquote>
+      </div>
+    </section>
+
+    <section class="section section--cinematic" id="first-look">
+      <div class="section__head reveal">
+        <span class="section-number">02</span>
+        <span class="eyebrow">من هنا الموضوع بدأ</span>
+        <h2>من أول مرة شوفتك وإنتي مش بتفارق خيالي</h2>
+      </div>
+      <div class="split-story">
+        <div class="story-copy reveal">
+          <p>أنا مش هقولك إن الزمن وقف أول ما شوفتك ولا هقولك كلام أفلام أنا نفسي مش هصدقه</p>
+          <p>بس هقولك الحقيقة</p>
+          <p>من يوم ما شوفتك وإنتي معلقة في دماغي بطريقة غريبة صورتك وطريقتك وهدوءك فضلوا معايا وكل ما أقول إن الموضوع إعجاب عادي وهيروح ألاقي نفسي بفكر فيكي أكتر</p>
+          <p>الغريب إني لسه معرفكيش بالشكل الكافي ومع ذلك حاسس إن فيكي حاجة مختلفة حاجة خلتني عايز أقرب منك باحترام وأعرف البنت اللي ورا الهدوء والثقة دي</p>
+        </div>
+        <div class="quote-panel reveal">
+          <span class="quote-mark">“</span>
+          <p>إنتي دخلتي دماغي بهدوء<br>وقررتي متخرجيش منها</p>
+          <small>ودي بصراحة حركة مش لطيفة منك 😂🤍</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-noor">
+      <div class="section__head reveal">
+        <span class="section-number">03</span>
+        <span class="eyebrow">طب ليه نور؟</span>
+        <h2>مش الموضوع شكل وبس</h2>
+        <p>في حاجات كتير فيكي شدتني من غير ما تحاولي أصلًا</p>
+      </div>
+      <div class="cards-grid">
+        <article class="detail-card reveal">
+          <span>01</span><h3>حضورك</h3>
+          <p>في ناس بتدخل المكان عادي وفي ناس وجودها بيتلاحظ حتى من غير كلام كتير وإنتي من النوع التاني</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>02</span><h3>شخصيتك</h3>
+          <p>عجبني إنك مش سهلة وإنك مش بتدي ثقة لأي حد بسرعة يمكن ده مصعبها عليا بس في نفس الوقت خلاني أحترمك أكتر</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>03</span><h3>هدوءك</h3>
+          <p>في هدوء في طريقتك بيشد مش هدوء ممل هدوء يخلي الواحد عايز يعرف إيه الكلام اللي جواكي ومبتقولهوش</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>04</span><h3>حدودك</h3>
+          <p>كونك مش بتوافقي بسرعة مش عيب ده معناه إنك عارفة قيمة نفسك وأنا مش عايز أكسر حدودك أنا عايز أخليكي تطمني لوجودي</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>05</span><h3>جمالك</h3>
+          <p>وطبعًا بعد كل الكلام العاقل ده لازم أعترف إنك قمر جدًا بس كنت بحاول أبان مركز في الشخصية الأول 😂</p>
+        </article>
+        <article class="detail-card reveal">
+          <span>06</span><h3>اختلافك</h3>
+          <p>إنتي مش شبه أي كلام عابر ولا شخص بيتنسي بسرعة ودي أكتر حاجة خلتني أفضل فاكر حضورك</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--sport" id="sport">
+      <div class="section__head reveal">
+        <span class="section-number">04</span>
+        <span class="eyebrow">بما إنك تربية رياضية</span>
+        <h2>خلينا نتكلم بلغتك شوية يا كابتن</h2>
+      </div>
+
+      <div class="status-panel reveal">
+        <div class="status-panel__title">تقييم حالة محمود بعد ما شاف نور</div>
+        <div class="meter-row"><span>التركيز</span><div class="meter"><i style="--value:5%"></i></div><b>5%</b></div>
+        <div class="meter-row"><span>التفكير في نور</span><div class="meter"><i style="--value:100%"></i></div><b>100%</b></div>
+        <div class="meter-row"><span>القدرة على الكلام قدامها</span><div class="meter"><i style="--value:10%"></i></div><b>10%</b></div>
+        <div class="meter-row"><span>التوتر</span><div class="meter"><i style="--value:95%"></i></div><b>95%</b></div>
+        <div class="meter-row"><span>الرغبة في معرفتها</span><div class="meter"><i style="--value:100%"></i></div><b>100%</b></div>
+        <p>واضح إن حالتي محتاجة إشراف من واحدة تربية رياضية 😂</p>
+      </div>
+
+      <div class="sport-cards">
+        <article class="sport-card reveal"><div class="sport-card__icon">01</div><h3>الإحماء</h3><p>إحنا لسه في أول التعارف يعني حتى لسه الماتش مبدأش وأنا مش مستعجل على نتيجة أنا بس طالب فرصة نبدأ كلام طبيعي ونعرف بعض واحدة واحدة</p></article>
+        <article class="sport-card reveal"><div class="sport-card__icon">02</div><h3>التركيز</h3><p>مش عارف بتدرسي تمارين تركيز في الكلية ولا لأ بس الواضح إنك خدتي تركيزي كله ومسبتيليش منه حاجة</p></article>
+        <article class="sport-card reveal"><div class="sport-card__icon">03</div><h3>اللياقة</h3><p>الكلام معاكي محتاج لياقة قلب عالية علشان كل مرة باجي أقولك حاجة بنسى نص الكلام وبقول النص التاني غلط</p></article>
+        <article class="sport-card reveal"><div class="sport-card__icon">04</div><h3>الكارت الأصفر</h3><p>لو حسيتِ إني بتقل عليكي اديني كارت أصفر وأنا هفهم وأهدي أنا آخر حاجة عايزها إن وجودي يضايقك</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="confessions">
+      <div class="section__head reveal">
+        <span class="section-number">05</span>
+        <span class="eyebrow">اعترافات على الماشي</span>
+        <h2>كل ضغطة هتطلع حاجة مخبيها</h2>
+      </div>
+      <div class="confession-box reveal">
+        <div class="confession-box__glow"></div>
+        <p id="confessionText">أنا ساعات بفتح الشات ومبيبقاش عندي كلام معين أنا ببقى عايز أكلمك إنتي وخلاص</p>
+        <button class="btn btn--primary" id="nextConfession">اعتراف كمان</button>
+        <span id="confessionCount">1 / 10</span>
+      </div>
+    </section>
+
+    <section class="section section--focus" id="message">
+      <div class="section__head reveal">
+        <span class="section-number">06</span>
+        <span class="eyebrow">الكلام اللي لازم تعرفيه</span>
+        <h2>أنا معجب بيكي فعلًا ومش هلف وأدور</h2>
+      </div>
+      <div class="main-message reveal">
+        <p>بصي يا نور</p>
+        <p>أنا معجب بيكي ودي حاجة مش هحاول ألف وأدور حواليها</p>
+        <p>ومن أول ما شوفتك وإنتي مش بتفارق خيالي ومهما حاولت أتعامل مع الموضوع إنه عادي بلاقي نفسي مهتم أعرفك أكتر</p>
+        <p>بس أنا كمان فاهم إن الإعجاب لوحده مش كفاية وفاهم إنك مش مطالبة تثقي فيا لمجرد إني قولتلك كلام حلو</p>
+        <p>علشان كده أنا مش بطلب منك ارتباط ومش بطلب منك وعد ومش بقولك قرري دلوقتي</p>
+        <p>أنا بطلب فرصة صغيرة للكلام فرصة تعرفي فيها أنا مين فعلًا وأعرف أنا كمان نور الحقيقية</p>
+        <p>نتكلم من غير ضغط ومن غير استعجال ومن غير تمثيل</p>
+        <p>لو بعد ما تعرفيني حسيتِ إن مفيش قبول أنا هحترم قرارك ومش هضايقك لكن كل اللي بطلبه إنك متحكميش عليا قبل ما تعرفيني</p>
+        <p>يمكن تكتشفي إني شخص مناسب ويمكن لأ بس على الأقل يكون قرارك مبني على إنك عرفتي محمود الحقيقي مش مجرد انطباع سريع عنه</p>
+        <p>أنا مش بوعدك إني كامل ومش هحاول أبيعلك صورة مش موجودة أنا عندي عيوب وبتوتر وممكن أهبد في الكلام لما أكلمك 😂</p>
+        <p>بس هكون واضح ومحترم ومش هلعب بمشاعرك ومش هختفي وأظهر على مزاجي ومش هضغط عليكي في أي حاجة</p>
+        <strong>أنا مش بطلب مكان في قلبك دلوقتي<br>أنا بطلب فرصة صغيرة تعرفيني فيها</strong>
+      </div>
+    </section>
+
+    <section class="section" id="questions">
+      <div class="section__head reveal">
+        <span class="section-number">07</span>
+        <span class="eyebrow">مش عايز أعرف كلام سطحي</span>
+        <h2>أنا عايز أعرف نور الحقيقية</h2>
+      </div>
+      <div class="questions-list reveal">
+        <button>إيه أكتر حاجة بتحبيها في كلية تربية رياضية؟</button>
+        <button>إيه الرياضة الأقرب لقلبك؟</button>
+        <button>إيه أكتر حاجة نفسك تحققيها؟</button>
+        <button>لما تكوني مخنوقة بتحبي حد يسمعك ولا تفضلي الهدوء؟</button>
+        <button>إيه أكتر صفة مهمة عندك في الشخص اللي يدخل حياتك؟</button>
+        <button>إيه الحاجة اللي مستحيل تقبليها من أي شخص؟</button>
+        <button>إيه أكتر حاجة بتضحكك من قلبك؟</button>
+        <button>إيه النسخة من نور اللي نفسك الناس تفهمها صح؟</button>
+      </div>
+      <p class="center-note reveal">مش لازم تجاوبي دلوقتي أنا بس حابب في يوم من الأيام أعرف إجابات الأسئلة دي منك إنتي</p>
+    </section>
+
+    <section class="section" id="detailsSection" hidden>
+      <div class="section__head reveal">
+        <span class="section-number">08</span>
+        <span class="eyebrow">تفاصيل صغيرة عندك</span>
+        <h2>بس أنا فاكرها</h2>
+      </div>
+      <div class="timeline" id="personalTimeline"></div>
+    </section>
+
+    <section class="section section--promise" id="chance">
+      <div class="section__head reveal">
+        <span class="section-number">08</span>
+        <span class="eyebrow">لو قولتي نجرب نتكلم</span>
+        <h2>الفرصة بالنسبالي مش وعد</h2>
+        <p>معناها بس إنك سمحتيلي تعرفيني وده لوحده كفاية عندي</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal"><b>01</b><h3>كلام طبيعي</h3><p>نبدأ من غير ضغط ولا أسئلة تحقيق ولا كلام تقيل</p></article>
+        <article class="step reveal"><b>02</b><h3>أفهمك</h3><p>أسمعك أكتر ما أتكلم وأفهم حدودك وحاجاتك المفضلة</p></article>
+        <article class="step reveal"><b>03</b><h3>أفعال مش كلام</h3><p>أخلي تصرفاتي هي اللي تثبتلك شخصيتي</p></article>
+        <article class="step reveal"><b>04</b><h3>من غير استعجال</h3><p>مش هستعجل مشاعر ولا قرار ولا خطوة إنتي مش مرتاحة لها</p></article>
+        <article class="step reveal"><b>05</b><h3>القرار قرارك</h3><p>وفي الآخر إنتي اللي هتقرري نكمل ولا لأ</p></article>
+      </div>
+    </section>
+
+    <section class="section decision" id="decision">
+      <div class="decision__inner reveal">
+        <span class="eyebrow">آخر الكلام</span>
+        <h2>بعد ما قريتي كل ده</h2>
+        <p>ممكن تديني فرصة بسيطة نتعرف فيها على بعض بهدوء؟</p>
+        <div class="decision__actions">
+          <button class="btn btn--primary decision-btn" data-choice="yes">ممكن نجرب نتكلم 🤍</button>
+          <button class="btn btn--ghost decision-btn" data-choice="time">محتاجة وقت</button>
+          <button class="btn btn--subtle decision-btn" data-choice="no">مش حابة</button>
+        </div>
+        <small>أي اختيار هتختاريه هيتحترم بالكامل</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button class="secret-star" id="secretStar" aria-label="رسالة سرية">✦</button>
+    <p>من محمود</p>
+    <h3>الشخص اللي كان داخل يقول كلمتين<br>فلقي نفسه عامل موقع كامل علشان واحدة اسمها نور 😂🤍</h3>
+    <span>يمكن أخدتي تركيزي كله بس بصراحة أنا مش زعلان</span>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">↑</button>
+
+  <div class="modal" id="musicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal aria-label="إغلاق">×</button>
+      <span class="eyebrow">تفصيلة صغيرة</span>
+      <h2 id="musicTitle">تحبي تقري الكلام مع موسيقى هادية؟</h2>
+      <div class="modal__actions">
+        <button class="btn btn--primary" id="playMusic">آه شغّلها 🎧</button>
+        <button class="btn btn--ghost" id="skipMusic">لأ خليني أركز في كلامك 😂</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="responseModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="responseTitle">
+    <div class="modal__card modal__card--response">
+      <button class="modal__close" data-close-modal aria-label="إغلاق">×</button>
+      <div class="response-icon" id="responseIcon">🤍</div>
+      <h2 id="responseTitle"></h2>
+      <p id="responseText"></p>
+      <a class="btn btn--primary" id="whatsappBtn" href="#" target="_blank" rel="noopener" hidden>افتحي واتساب محمود</a>
+    </div>
+  </div>
+
+  <div class="modal" id="secretModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+    <div class="modal__card modal__card--response">
+      <button class="modal__close" data-close-modal aria-label="إغلاق">×</button>
+      <div class="response-icon">✦</div>
+      <h2 id="secretTitle">واضح إنك مركزة واكتشفتي الرسالة السرية 😂</h2>
+      <p>كل تفصيلة هنا اتعملت علشانك مش علشان أبهرك بموقع لكن علشان أوصلك إنك فعلًا بقيتي شخص مهم في تفكيري وأيًا كان ردك أنا مبسوط إنك وصلتي لحد هنا وقريتي كلامي 🤍</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ضع ملف الموسيقى باسم romantic.mp3 داخل نفس مجلد الموقع -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="romantic.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
